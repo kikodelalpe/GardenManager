@@ -61,7 +61,7 @@ QMap<int, QString> DatabaseManager::getAvailableSeeds(){
 bool DatabaseManager::connectToDatabase(){
     QString dataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
     QDir dir(dataDir);
-    if(!dir.exists()) dir.mkpath(".");
+    if(!dir.exists()) dir.mkpath(dataDir);
     QString dbPath = dir.absoluteFilePath("garden_manager.db");
     qInfo() << "Searching database in: " << dbPath;
     if(!QFileInfo::exists(dbPath)){

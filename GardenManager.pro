@@ -53,3 +53,16 @@ TRANSLATIONS += \
 
 RESOURCES += \
     res/resources.qrc
+
+win32: RC_ICONS = gardenmanager.ico
+
+DISTFILES += \
+    android/AndroidManifest.xml \
+    android/build.gradle \
+    android/res/values/libs.xml \
+    android/res/xml/qtprovider_paths.xml
+
+contains(ANDROID_TARGET_ARCH,arm64-v8a) {
+    ANDROID_PACKAGE_SOURCE_DIR = \
+        $$PWD/android
+}
