@@ -1,0 +1,7 @@
+GardenManager features to add:
+-More complex enviornment variables for plant species depending on the plant status.
+-Autosize of tables to improve, more fluid and larger cells.
+-More complex variety structure:
+--Type of variety: annual?/(perenne), raccolta singola/continua, autofiorente/fotoperiodo
+-Manufacturer's table
+-Products of 2 types: expirable and not, with expiration time after open set in product dialog.

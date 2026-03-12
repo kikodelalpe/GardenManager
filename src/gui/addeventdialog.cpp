@@ -19,7 +19,7 @@ addEventDialog::addEventDialog(int groupId, int plantId, int eventId, QWidget *p
     , _eventId(eventId)
 {
     ui->setupUi(this);
-    QSettings settings("MyGardenApp", "GardenManager");
+    QSettings settings;
     QString dateFormat = settings.value("date_format", "dd/MM/yyyy").toString();
     QString timeFormat = settings.value("time_format", "HH:mm").toString();
     ui->dateTimeEvent->setDisplayFormat(dateFormat + " " + timeFormat);

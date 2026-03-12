@@ -38,7 +38,7 @@ void SettingsDialog::populateCombos()
 
 void SettingsDialog::loadCurrentSettings()
 {
-    QSettings settings("MyGardenApp", "GardenManager");
+    QSettings settings;
     QString savedLang = settings.value("language", "it").toString();
     QString savedSystem = settings.value("unit_system", "metric").toString();
     QString savedCurrency = settings.value("currency", "EUR").toString();
@@ -64,7 +64,7 @@ void SettingsDialog::loadCurrentSettings()
 
 void SettingsDialog::saveSettings()
 {
-    QSettings settings("MyGardenApp", "GardenManager");
+    QSettings settings;
     settings.setValue("language", ui->cmbLanguage->currentData().toString());
     settings.setValue("unit_system", ui->cmbSystem->currentData().toString());
     settings.setValue("currency", ui->cmbCurrency->currentData().toString());

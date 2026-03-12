@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/translations">
-        <file>translations/garden_manager_it.qm</file>
+        <file alias="garden_manager_it.qm">translations/garden_manager_it.qm</file>
     </qresource>
     <qresource prefix="/data">
         <file>db/garden_manager.db</file>

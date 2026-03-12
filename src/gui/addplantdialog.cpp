@@ -19,7 +19,7 @@ AddPlantDialog::AddPlantDialog(int plantId, QWidget *parent)
     , _plantId(plantId)
 {
     ui->setupUi(this);
-    QSettings settings("MyGardenApp", "GardenManager");
+    QSettings settings;
     QString dateFormat = settings.value("date_format", "dd/MM/yyyy").toString();
     ui->dateEditStart->setDisplayFormat(dateFormat);
     setupGroupsCombo();

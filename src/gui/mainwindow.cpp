@@ -386,7 +386,7 @@ void MainWindow::loadDiariesForGroup(int groupId){
     diaryModel->setQuery(std::move(query));
     ui->tableEntries->setModel(diaryModel);
     ui->tableEntries->setColumnHidden(0, true);
-    QSettings settings("MyGardenApp", "GardenManager");
+    QSettings settings;
     QString dateFormat = settings.value("date_format", "dd/MM/yyyy").toString();
     QString timeFormat = settings.value("time_format", "HH:mm").toString();
     QString dateTimeFormat = dateFormat + " " + timeFormat;
@@ -460,7 +460,7 @@ void MainWindow::onBtnDeleteWarehouseClicked(){
 }
 
 void MainWindow::setupWarehouse(){
-    QSettings settings("MyGardenApp", "GardenManager");
+    QSettings settings;
     QString currencyCode = settings.value("currency", "EUR").toString();
     QString currencySymbol = "€";
     if(currencyCode == "USD") currencySymbol = "$";

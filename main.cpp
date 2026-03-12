@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     QCoreApplication::setOrganizationName("DMsw");
     QCoreApplication::setApplicationName("GardenManager");
-    QSettings settings("MyGardenApp", "GardenManager");
+    QSettings settings;
     QString langCode = settings.value("language", "").toString();
     if(langCode.isEmpty()){
         QLocale systemLocale = QLocale::system();

@@ -73,10 +73,12 @@ void AddBatchDialog::refreshProductList(){
 
 void AddBatchDialog::setupUnits(){
     ui->cmbUnits->clear();
-    QSettings settings("myGardenApp", "GardenManager");
+    QSettings settings;
     QString unitSystem = settings.value("unit_system", "metric").toString();
-    QSqlQuery query("SELECT abbreviation FROM units WHERE system IN (':sys', 'universal') ORDER BY id ASC");
+    QSqlQuery query;
+    query.prepare("SELECT abbreviation FROM units WHERE system IN (:sys, 'universal') ORDER BY id ASC");
     query.bindValue(":sys", unitSystem);
+    query.exec();
     while(query.next()) ui->cmbUnits->addItem(query.value(0).toString());
 }
 
